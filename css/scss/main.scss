@@ -1,0 +1,70 @@
+@import "bourbon";
+@import "base/base";
+@import "neat";
+
+@mixin centerVert($width,$size){
+  margin: calc(50vh - #{$size / 2}) auto;
+  height: $size;
+  line-height: $size;
+  &.fallback {
+    width: $width;
+    margin-top: -$size / 2;
+    position: absolute;
+    top: 50%;
+  }
+}
+
+body{
+  margin: 0;
+}
+
+.container{
+  @include outer-container;
+
+  .hero{
+    @include span-columns(12);
+    @include centerVert(100%,100px);
+
+
+    $mobile: new-breakpoint(max-width 650px 4);
+    @include media($mobile) {
+      @include span-columns(4);
+      @include shift(0);
+
+    }
+
+    h1{
+      text-align: center;
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 400;
+      @include media($mobile) {
+        font-size: 30px;
+      }
+
+      .pad-out-word{
+        padding-left: 100px;
+        color: $light-gray;
+
+        @include media($mobile) {
+          padding-left: 50px;
+        }
+      }
+    }
+  }
+
+  .footer{
+    @include span-columns(12);
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    a{
+      color: $light-gray;
+    }
+  }
+
+}
