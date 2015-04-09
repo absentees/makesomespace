@@ -23,7 +23,7 @@ body{
 
   .hero{
     @include span-columns(12);
-    @include centerVert(100%,100px);
+  //  @include centerVert(100%,100px);
 
 
     $mobile: new-breakpoint(max-width 650px 4);

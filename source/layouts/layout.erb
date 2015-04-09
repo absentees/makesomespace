@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= current_page.data.title || "The Middleman" %></title>
+
+  <script src="//use.typekit.net/wsh8wtu.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <%= stylesheet_link_tag "normalize", "main" %>
+  <%= javascript_include_tag  "all" %>
+
+</head>
+<body class="<%= page_classes %>">
+  <%= yield %>
+</body>
+</html>
